@@ -5,6 +5,13 @@ const _ = require('lodash')
 const app = express()
 app.use(bodyParser.json())
 
+app.get('/api/env', async (req, res) => {
+
+    const json = JSON.stringify(process.env)
+    
+    res.send('Hello World')
+})
+
 app.get('/api/hello', async (req, res) => {
 
     res.send('Hello World')
